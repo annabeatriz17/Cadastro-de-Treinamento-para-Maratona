@@ -24,9 +24,21 @@ treinamentoRoutes.post("/", (req, res) => {
   const { nomeTreinamento, distancia, diasSemana, avaliacaoTreino } = req.body;
 
 
-  if (!nomeTreinamento || !distancia || !diasSemana || !avaliacaoTreino) {
+  if (!nomeTreinamento || !distancia) {
     return res.status(400).json({
-      message: "Os campos nomeTreinamento, distancia, diasSemana e avaliacaoTreino são obrigatórios!",
+      message: "Os campos nomeTreinamento e distancias!",
+    });
+  }
+
+  if (diasSemana < 2) {
+    return res.status(400).send({
+      message: "O campo diasSemana deve conter no mínimo 2 dias!",
+    });
+  }
+
+  if (avaliacaoTreino != "ruim" && avaliacaoTreino != "bom" && avaliacaoTreino != "excelente") {
+    return res.status(400).send({
+      message: "Digite 'ruim', 'bom' ou 'excelente'! em avaliacaoTreino!",
     });
   }
 
