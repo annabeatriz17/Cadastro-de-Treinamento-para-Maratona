@@ -1,8 +1,16 @@
 import { Router } from "express";
 
-const usuariosRoutes = Router();
+const treinamentoRoutes = Router();
 
-let usuarios = [];
+let treinamento = [
+  {
+    id: Math.floor(Math.random() * 100),
+    nomeTreinamento: "Treinamento 1",
+    distancia: 10,
+    diasSemana: 5,
+    avaliacaoTreino: 4,
+  },
+];
 
 usuariosRoutes.get("/", (req, res) => {
   return res.status(200).json({
