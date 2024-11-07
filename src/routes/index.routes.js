@@ -1,3 +1,4 @@
+
 import { Router } from "express";
 
 // Lista de importação das rotas do projeto
