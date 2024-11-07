@@ -60,4 +60,8 @@ treinamentoRoutes.post("/", (req, res) => {
 
 
 
+
+
+
+
 export default treinamentoRoutes;
