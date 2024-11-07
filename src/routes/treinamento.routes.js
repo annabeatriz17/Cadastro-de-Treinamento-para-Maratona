@@ -20,4 +20,17 @@ treinamentoRoutes.get("/", (req, res) => {
   });
 }); 
 
+
+treinamentoRoutes.post("/", (req, res) => {
+  const { nomeTreinamento, distancia, diasSemana, avaliacaoTreino } = req.body;
+
+  
+  if (!nomeTreinamento || !distancia || !diasSemana || !avaliacaoTreino) {
+    return res.status(400).json({
+      message: "Os campos nomeTreinamento, distancia, diasSemana e avaliacaoTreino são obrigatórios!",
+    });
+  };
+
+});
+
 export default treinamentoRoutes;
